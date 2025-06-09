@@ -137,7 +137,7 @@ handleCategoyNamesList()
 
 function handleTodosList() {
     todosListElement.innerHTML = ''
-
+    if (todos.categories.length == 0) return;
     todos.categories[currentCategoryIndex].todos.map((todo, todoIndex) => {
         if (!todo.isCompleted) {
             const todoTile = document.createElement("div")
@@ -251,6 +251,7 @@ document.getElementById("cancel-creating-todo")?.addEventListener('click', () =>
 })
 
 document.getElementById("create-new-todo-button")?.addEventListener('click', () => {
+    console.log("clicked")
     showCreateTodoPopup()
 })
 

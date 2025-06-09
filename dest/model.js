@@ -2,7 +2,7 @@ export function jsonToTodosModel(jsonString) {
     try {
         const parsed = JSON.parse(jsonString);
         if (!parsed || !Array.isArray(parsed.categories)) {
-            throw new Error('Invalid TodosModel structure');
+            throw new Error('Invalid TodosModel structure ');
         }
         return parsed;
     }

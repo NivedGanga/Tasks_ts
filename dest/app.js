@@ -126,6 +126,8 @@ function handleCategoyNamesList() {
 handleCategoyNamesList();
 function handleTodosList() {
     todosListElement.innerHTML = '';
+    if (todos.categories.length == 0)
+        return;
     todos.categories[currentCategoryIndex].todos.map((todo, todoIndex) => {
         if (!todo.isCompleted) {
             const todoTile = document.createElement("div");
@@ -232,6 +234,7 @@ function hideCreateTodoPopup() {
     hideCreateTodoPopup();
 });
 (_b = document.getElementById("create-new-todo-button")) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
+    console.log("clicked");
     showCreateTodoPopup();
 });
 // create todo
